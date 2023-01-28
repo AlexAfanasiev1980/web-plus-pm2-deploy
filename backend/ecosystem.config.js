@@ -7,7 +7,7 @@ const {
 module.exports = {
   apps: [{
     name: 'api-service',
-    script: './dist/app.js',
+    script: './app.js',
   }],
 
   // Настройка деплоя
@@ -16,7 +16,7 @@ module.exports = {
       user: DEPLOY_USER,
       host: DEPLOY_HOST,
       ref: DEPLOY_REF,
-      repo: 'https://github.com/AlexAfanasiev1980//web-plus-pm2-deploy',
+      repo: 'https://github.com/AlexAfanasiev1980/web-plus-pm2-deploy',
       path: DEPLOY_PATH,
       'pre-deploy': `scp ./*.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
       'post-deploy': 'npm i && npm run build',
